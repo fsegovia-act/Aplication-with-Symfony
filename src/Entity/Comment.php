@@ -15,7 +15,7 @@ class Comment
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $contet = null;
+    private ?string $content = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
     #[ORM\JoinColumn(nullable: false)]
@@ -26,14 +26,14 @@ class Comment
         return $this->id;
     }
 
-    public function getContet(): ?string
+    public function getContent(): ?string
     {
-        return $this->contet;
+        return $this->content;
     }
 
-    public function setContet(string $contet): self
+    public function setContent(string $content): self
     {
-        $this->contet = $contet;
+        $this->content = $content;
 
         return $this;
     }
@@ -49,4 +49,5 @@ class Comment
 
         return $this;
     }
+    
 }
