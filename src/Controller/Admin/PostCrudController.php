@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
@@ -33,7 +34,7 @@ class PostCrudController extends AbstractCrudController
             IdField::new('id')->onlyOnIndex(),
             AssociationField::new('category', 'Category'),
             TextField::new('title', 'Title'),
-            TextField::new('slug'),
+            SlugField::new('slug')->setTargetFieldName('title'),
             TextEditorField::new('content', 'Content description')->hideOnIndex(),
         ];
     }
