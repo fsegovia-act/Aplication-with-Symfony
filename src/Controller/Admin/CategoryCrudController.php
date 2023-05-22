@@ -21,13 +21,16 @@ class CategoryCrudController extends AbstractCrudController
     public function fonfigureCrud(Crud $crud): Crud
     {
         return $crud
+            ->setEntityLabelInSingular('Category')
+            ->setEntityLabelInPlural('Category')
             ->setSearchFields(['name'])
-            ->setDefaultSort(['id', 'DESC']);
+            ->setDefaultSort(['id' => 'DESC']);
     }
     
     public function configureFields(string $pageName): iterable
     {
         return [
+            IdField::new('id')->onlyOnIndex(),
             TextField::new('name', 'Name'),
             SlugField::new('slug')->setTargetFieldName('name'),
         ];
