@@ -8,6 +8,8 @@ use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
 use Zenstruck\Foundry\RepositoryProxy;
 
+use App\Factory\UserFactory;
+
 /**
  * @extends ModelFactory<Comment>
  *
@@ -48,7 +50,7 @@ final class CommentFactory extends ModelFactory
     {
         return [
             'content' => self::faker()->text(),
-            'post' => PostFactory::new(),
+            'user' => UserFactory::new(),
         ];
     }
 
