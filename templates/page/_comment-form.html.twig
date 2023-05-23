@@ -2,7 +2,7 @@
     
     <p>Comment as <strong>{{ app.user.name }}</strong></p>
 
-    {{ form(form) }}
+    {{ form(form, { 'action': path('app_new_comment', { slug: post.slug })}) }}
 
 {% else %}
 
