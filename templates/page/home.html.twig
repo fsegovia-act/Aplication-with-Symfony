@@ -8,20 +8,14 @@
 
     <h2>
 
-        <a href="{{ path('app_post', { slug: post.slug}) }}">
+        <a href="{{ path('app_post', { slug: post.slug}) }}" class="text-dark text-decoration-none">
             {{ post.title }}
         </a>
 
     </h2>
 
-    <p>
+    {% include('page/_info.html.twig') %}
 
-        <strong>{{ post.category.name }}</strong>
-        -
-        {{ post.comments|length }} Comments
-
-    </p>
-    
     <hr>
 
     {% endfor %}
